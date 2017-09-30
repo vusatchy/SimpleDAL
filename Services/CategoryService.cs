@@ -69,8 +69,8 @@ namespace Services
             }
         }
 
-        public List<Category> getAll()
-        {
+        public List<Category> getAll(){
+        
             List<Category> categories = new List<Category>();
             Category category = null;
             using (MySqlConnection connection = getConnection())

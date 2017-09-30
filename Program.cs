@@ -26,11 +26,19 @@ namespace DALTask
             user.sex = Sex.MALE;
             user.registrationTime = DateTime.Now;
             servie.delete(user);*/
-            ITemplateDAL<Feedback> fService = new FeedbackService();
+            /*ITemplateDAL<Feedback> fService = new FeedbackService();
             List<Feedback> feedbacks = fService.getAll();
             foreach (Feedback f in feedbacks)
             {
                 Console.WriteLine(f);
+                Console.WriteLine("+----------------------------------------------------------------+");
+            }*/
+            ITemplateDAL<Product> pService = new ProductService();
+            List<Product> products = pService.getAll();
+            foreach (Product p in products)
+            {
+                Console.WriteLine(p);
+                Console.WriteLine("+++++++++++++++++++++++");
             }
             Console.WriteLine();
             Console.ReadKey();

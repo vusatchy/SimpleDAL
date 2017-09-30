@@ -21,7 +21,7 @@ namespace Services
             {
 
                 MySqlCommand command = connection.CreateCommand();
-                command.CommandText = "SELECT *, c.name AS cname FROM feedback f INNER JOIN user u ON f.id=u.id INNER JOIN product p ON f.id = p.id INNER JOIN category c ON p.category_id = c.id WHERE f.id=@id";
+                command.CommandText = "SELECT *, c.name AS cname FROM feedback f INNER JOIN user u ON f.user_id=u.id INNER JOIN product p ON f.id = p.id INNER JOIN category c ON p.category_id = c.id WHERE f.id=@id";
                 command.Parameters.AddWithValue("@id", id);
                 connection.Open();
                 MySqlDataReader dataReader = command.ExecuteReader();
@@ -107,7 +107,7 @@ namespace Services
             {
 
                 MySqlCommand command = connection.CreateCommand();
-                command.CommandText = "SELECT *, c.name AS cname FROM feedback f INNER JOIN user u ON f.id=u.id INNER JOIN product p ON f.id = p.id INNER JOIN category c ON p.category_id = c.id";
+                command.CommandText = "SELECT *, c.name AS cname FROM feedback f INNER JOIN user u ON f.user_id=u.id INNER JOIN product p ON f.id = p.id INNER JOIN category c ON p.category_id = c.id";
                 connection.Open();
                 MySqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
